@@ -309,6 +309,17 @@ class TestExpectedTranscription(unittest.TestCase):
         }
         self.performTest(pairs)
 
+    def test_mjakist_vidminky(self):
+        # д т з с перед кінцевим мʼяким основи прикметників твердої...
+        pairs = {
+            'наро!дні': 'наро!д(^\')^н\'і',
+            'па!мʼятні': 'па!мйат(^\')^н\'і',
+            'о!бразні': 'о!браз(^\')^н\'і',
+            # Словник 2001-2003 вважає, що тут помʼякшувати необхідно:
+            'барви!сті': 'барви!с\'т\'і',
+        }
+        self.performTest(pairs)
+
     def test_double(self):
         pairs = {
             'щаве!ль': 'шчаве!л\'',
